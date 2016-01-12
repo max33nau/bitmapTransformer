@@ -11,7 +11,7 @@ gulp.task('run-tests', function() {
 });
 
 gulp.task('watch-test', function() {
-  gulp.watch(['./lib/*.js', './test/testBitmap.js'], ['run-tests']);
+  gulp.watch(['./lib/*.js', './test/testBitmap.js'], ['run-tests', 'lint']);
 });
 
 gulp.task('lint', function() {
@@ -21,4 +21,4 @@ gulp.task('lint', function() {
 });
 
 gulp.task('default', ['run-tests']);
-gulp.task('test', ['run-tests', 'watch-test']);
+gulp.task('test', ['run-tests', 'watch-test', 'lint']);
